@@ -8,10 +8,17 @@
 
   <ItemGroup>
     <Folder Include="ExternalServices\" />
-    <Folder Include="DataAccess\" />
     <Folder Include="Configurations\" />
     <Folder Include="XMLProcessing\" />
-    <Folder Include="Repositories\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\RepoCentral.Core\RepoCentral.Core.csproj" />
+    <ProjectReference Include="..\..\Domain\RepoCentral.Domain\RepoCentral.Domain.csproj" />
   </ItemGroup>
 
 </Project>

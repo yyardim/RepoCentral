@@ -7,9 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Dtos\" />
+    <Folder Include="Commands\Repo\" />
     <Folder Include="Services\" />
-    <Folder Include="Validators\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\RepoCentral.Core\RepoCentral.Core.csproj" />
+    <ProjectReference Include="..\..\Domain\RepoCentral.Domain\RepoCentral.Domain.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\RepoCentral.Infrastructure\RepoCentral.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

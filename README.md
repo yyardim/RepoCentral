@@ -17,12 +17,16 @@ RepoCentral is a financial application designed to handle repo transactions. The
 
 ## Technologies
 
-- *.NET Core 6.0* - Backend framework
-- *MediatR* - For implementing CQRS pattern
-- *Entity Framework Core* - ORM for database access
-- *SQL Server* - Database
+- *.NET Core 8.0* - Backend framework
 - *React* - Front-end framework
+- *SQL Server* - Database
+- *Entity Framework Core* - ORM for database access
+- *MediatR* - For implementing CQRS pattern
+- *Mapster - Object-to-object mapping
 - *FluentValidation* - Validation for commands
+- *Carter - Elegant Routing for ASP.NET Core*
+- *Bogus* - Fake data generation
+- *Swagger* - API documentation- 
 - *Moq* & *xUnit* - Unit testing
 
 ---
@@ -30,23 +34,61 @@ RepoCentral is a financial application designed to handle repo transactions. The
 ## Architecture
 
 This solution follows *Clean Architecture* with the following layers:
-1. *Domain Layer* - Contains core business logic (Entities, Value Objects, etc.).
-2. *Application Layer* - Implements CQRS with Commands, Queries, DTOs, and Handlers.
-3. *Infrastructure Layer* - Data access (repositories), XML processing, external services.
-4. *API Layer* - ASP.NET Core Web API exposing RESTful endpoints.
-5. *Client Layer* - React-based front-end application.
+1. *Core Layer* - Defines behaviors, exception & base classes for CQRS.
+2. *API Layer* - ASP.NET Core Web API exposing RESTful endpoints.
+3. *Application Layer* - Implements CQRS with Commands, Queries, DTOs, and Handlers.
+4. *Domain Layer* - Contains core business logic (Entities, Value Objects, etc.).
+5. *Infrastructure Layer* - Data access (repositories), XML processing, external services.
+6. *Client Layer* - React-based front-end application.
 
 ---
 
 ## Folder Structure
+*client* - Contains the React front-end application
+*src* - Contains the .NET Core Web API
+  *Api* - Contains the Web API project
+	*Controllers* - Contains the API controllers
+	*DTOs* - Contains Data Transfer Objects
+	*Extensions* - Contains extension methods
+	*Filters* - Contains exception filters
+	*Handlers* - Contains MediatR handlers
+	*Models* - Contains domain models
+	*Services* - Contains services
+  *Application* - Contains the application layer
+	*Commands* - Contains CQRS commands
+	*Queries* - Contains CQRS queries
+	*DTOs* - Contains Data Transfer Objects
+	*Handlers* - Contains MediatR handlers
+  *Core* - Contains the core layer
+	*Entities* - Contains domain entities
+	*Exceptions* - Contains custom exceptions
+	*Interfaces* - Contains interfaces
+  *Domain* - Contains the domain layer
+	*Entities* - Contains domain entities
+	*ValueObjects* - Contains value objects
+  *Infrastructure* - Contains the infrastructure layer
+	*Data* - Contains data access (repositories)
+	*Services* - Contains external services
+	*XMLProcessing* - Contains XML processing service
+*Tests* - Contains unit tests
+  *Application* - Contains application layer tests
+  *Core* - Contains core layer tests
+  *Infrastructure* - Contains infrastructure layer tests
+  *Models* - Contains domain model tests
+  *Services* - Contains service tests
+*RepoCentral.sln* - Solution file
 
 ---
 
 ## Getting Started
 
 ### Prerequisites
-- *.NET Core 6.0 SDK* installed
+- *.NET Core 8.0 SDK* installed
 - *SQL Server* running
+- *Visual Studio 2019* or *Visual Studio Code* (for the .NET Core Web API)
+- *Postman* or *Swagger* for API testing
+- *Git* installed
+- *Docker* installed (for running API in a container)
 - *Node.js* and *npm* installed (for the React front-end)
 
 ### Setup
